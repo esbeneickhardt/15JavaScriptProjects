@@ -1,0 +1,92 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* Basic Reset */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Removing bullets from uls */
+ul {
+    list-style-type: none;
+}
+
+/* Removing decoration of a like lines under links */
+a {
+    text-decoration: none;
+}
+
+/* Body Fonts and Colors */
+body {
+    font-family: "Open Sans", sans-serif;
+    background: hsl(210, 36%, 96%);
+    color: hsl(347, 61%, 16%);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+/* H4 Fonts and Colors */
+h4 {
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+  }
+  
+/* H4 Fonts and Colors dependent of resolution*/
+@media screen and (min-width: 800px) {
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Navbar Size and Colors*/
+nav {
+    background: #fff;
+    height: 3rem;
+    display: grid;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar center Size and Colors*/
+.nav-center {
+    width: 90vw;
+    max-width: 620px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navbar center H4 Size and Color*/
+.nav-center h4 {
+    margin-bottom: 0;
+    color: hsl(205, 78%, 60%);
+}
+
+/* Navbar links Size and Color*/
+.nav-links {
+display: flex;
+}
+
+/* Navbar links Size and Color*/
+nav a {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(205, 86%, 17%);
+    letter-spacing: 0.1rem;
+    margin-right: 1rem;
+}
+
+/* Navbar links a Color on Hover*/
+nav a:hover {
+    color: hsl(205, 78%, 60%);
+}
