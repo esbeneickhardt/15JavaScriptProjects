@@ -1,92 +1,279 @@
-/* Importing Google Fonts */
+/*
+=============== 
+Fonts
+===============
+*/
+/* Importing Google Fonts for "Open Sans" and "Roboto" with specified weights */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
-/* Basic Reset */
+/*
+=============== 
+Variables
+===============
+*/
+
+/* Defining CSS variables (custom properties) for color, font, spacing, and layout */
+:root {
+  /* dark shades of primary color */
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif; /* Font family for primary text */
+  --ff-secondary: "Open Sans", sans-serif; /* Font family for secondary text */
+  --transition: all 0.3s linear; /* Transition effect for smooth changes */
+  --spacing: 0.1rem; /* Spacing for letter-spacing and margins */
+  --radius: 0.25rem; /* Border radius for rounded corners */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Dark shadow effect */
+  --max-width: 1170px; /* Maximum width for container */
+  --fixed-width: 620px; /* Fixed width for specific elements */
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+/* Resetting margin, padding, and box-sizing for all elements */
 *,
 ::after,
 ::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Removing bullets from uls */
-ul {
-    list-style-type: none;
-}
-
-/* Removing decoration of a like lines under links */
-a {
-    text-decoration: none;
-}
-
-/* Body Fonts and Colors */
+/* Styling body with font, background color, text color, line-height, and font size */
 body {
-    font-family: "Open Sans", sans-serif;
-    background: hsl(210, 36%, 96%);
-    color: hsl(347, 61%, 16%);
-    line-height: 1.5;
-    font-size: 0.875rem;
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
 }
 
-/* H4 Fonts and Colors */
+/* Removing bullets from unordered lists */
+ul {
+  list-style-type: none;
+}
+
+/* Removing underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Styling headings with font family, letter-spacing, text transformation, and margin */
+h1,
+h2,
+h3,
 h4 {
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-  }
-  
-/* H4 Fonts and Colors dependent of resolution*/
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+
+/* Specific font sizes for different heading levels */
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+
+/* Styling paragraphs with bottom margin and text color */
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+/* Responsive design for larger screens */
 @media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+    h2 {
+        font-size: 2.5rem;
+        line-height: 1;
+    }
+    h3 {
+        font-size: 1.75rem;
+        line-height: 1;
+    }
     h4 {
+        font-size: 1rem;
+        line-height: 1;
+    }
+    body {
         font-size: 1rem;
     }
 }
 
-/* Navbar Size and Colors*/
+/* Global class for section padding */
+.section {
+    padding: 5rem 0;
+}
+
+/* Centering section content and limiting maximum width */
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+/* Responsive design for larger screens */
+@media screen and (min-width: 992px) {
+    .section-center {
+        width: 95vw;
+    }
+}
+
+/* Centering main content vertically and horizontally */
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/*
+=============== 
+Nav
+===============
+*/
+
+/* Styling the navigation bar with background color, height, and shadow */
 nav {
-    background: #fff;
+    background: var(--clr-white);
     height: 3rem;
     display: grid;
     align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--dark-shadow);
 }
 
-/* Navbar center Size and Colors*/
+/* Centering navigation content and setting maximum width */
 .nav-center {
     width: 90vw;
-    max-width: 620px;
+    max-width: var(--fixed-width);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Navbar center H4 Size and Color*/
+/* Styling the h4 element inside the nav-center with color */
 .nav-center h4 {
     margin-bottom: 0;
-    color: hsl(205, 78%, 60%);
+    color: var(--clr-primary-5);
 }
 
-/* Navbar links Size and Color*/
+/* Displaying navigation links in a horizontal row */
 .nav-links {
-display: flex;
+    display: flex;
 }
 
-/* Navbar links Size and Color*/
+/* Styling links inside the nav with text transformation, font weight, size, color, and spacing */
 nav a {
     text-transform: capitalize;
     font-weight: 700;
     font-size: 1rem;
-    color: hsl(205, 86%, 17%);
-    letter-spacing: 0.1rem;
+    color: var(--clr-primary-1);
+    letter-spacing: var(--spacing);
     margin-right: 1rem;
 }
 
-/* Navbar links a Color on Hover*/
+/* Styling links inside the nav on hover */
 nav a:hover {
-    color: hsl(205, 78%, 60%);
+    color: var(--clr-primary-5);
+}
+
+/*
+=============== 
+Container
+===============
+*/
+
+/* Centering main content and adjusting height to account for navbar */
+main {
+    min-height: calc(100vh - 3rem);
+    display: grid;
+    place-items: center;
+}
+
+/* Centering text inside container */
+.container {
+    text-align: center;
+}
+
+/* Styling h2 element inside container with background, color, padding, border-radius, and margin */
+.container h2 {
+    background: var(--clr-black);
+    color: var(--clr-white);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 2.5rem;
+}
+
+/* Applying color from variables to elements with class .color */
+.color {
+    color: var(--clr-primary-5);
+}
+
+/* Button styling with font, text transformation, background, color, spacing, border, shadow, and padding */
+.btn-hero {
+    font-family: var(--ff-primary);
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--clr-black);
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    font-weight: 700;
+    transition: var(--transition);
+    border: 2px solid var(--clr-black);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+}
+
+/* Button hover styling */
+.btn-hero:hover {
+    color: var(--clr-white);
+    background: var(--clr-black);
 }
