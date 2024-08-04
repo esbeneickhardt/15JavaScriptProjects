@@ -5,5 +5,5 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 
 * color_flipper  
   Lets you change the background color to a random color
-* counter
-  Lets you increas, decrease and reset counts
+* counter  
+  Lets you increase, decrease and reset counts
