@@ -7,3 +7,6 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
   Lets you change the background color to a random color
 * counter  
   Lets you increase, decrease and reset counts
+* reviews  
+  Displays pretty reviews that one can iterate over
+   
