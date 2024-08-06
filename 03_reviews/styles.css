@@ -1,0 +1,371 @@
+/*
+=============== 
+Fonts
+===============
+*/
+/* Importing Google Fonts for "Open Sans" and "Roboto" with specified weights */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+/* Defining CSS variables (custom properties) for color, font, spacing, and layout */
+:root {
+    /* Dark shades of primary color for deeper contrasts */
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+
+    /* Primary/main color used for prominent elements */
+    --clr-primary-5: hsl(205, 78%, 60%);
+
+    /* Lighter shades of primary color for backgrounds and accents */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+
+    /* Darkest grey for headings to ensure readability */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+
+    /* Grey shades used for paragraphs and secondary text */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+
+    /* Other colors for specific use cases */
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+
+    /* Font families for primary and secondary text */
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+
+    /* Transition effect for smooth property changes */
+    --transition: all 0.3s linear;
+
+    /* Spacing for letter-spacing and margins */
+    --spacing: 0.1rem;
+
+    /* Border radius for rounded corners */
+    --radius: 0.25rem;
+
+    /* Shadow effects for light and dark appearances */
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    /* Maximum width for container elements */
+    --max-width: 1170px;
+
+    /* Fixed width for specific elements */
+    --fixed-width: 620px;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+/* Resetting margin, padding, and box-sizing for all elements to ensure consistency */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with font, background color, text color, line-height, and font size */
+body {
+    font-family: var(--ff-secondary);
+    background: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+/* Removing default list styling from unordered lists */
+ul {
+    list-style-type: none;
+}
+
+/* Removing default underline from links */
+a {
+    text-decoration: none;
+}
+
+/* Styling headings with font family, letter-spacing, text transformation, and margin */
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: var(--ff-primary);
+}
+
+/* Font size settings for different heading levels */
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.875rem;
+}
+
+/* Styling paragraphs with bottom margin and text color */
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-5);
+}
+
+/* Responsive design adjustments for larger screens */
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem; /* Increase h1 font size for larger screens */
+    }
+    h2 {
+        font-size: 2.5rem; /* Increase h2 font size for larger screens */
+    }
+    h3 {
+        font-size: 1.75rem; /* Increase h3 font size for larger screens */
+    }
+    h4 {
+        font-size: 1rem; /* Increase h4 font size for larger screens */
+    }
+    body {
+        font-size: 1rem; /* Increase base font size for larger screens */
+    }
+    /* Adjust line-height for headings on larger screens */
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+}
+
+/* Global section padding */
+.section {
+    padding: 5rem 0; /* Vertical padding for sections */
+}
+
+/* Centering section content and setting maximum width */
+.section-center {
+    width: 90vw; /* Width relative to viewport width */
+    margin: 0 auto; /* Center horizontally */
+    max-width: var(--max-width); /* Maximum width constraint */
+}
+
+/* Responsive width adjustment for larger screens */
+@media screen and (min-width: 992px) {
+    .section-center {
+        width: 95vw; /* Increase width relative to viewport */
+    }
+}
+
+/* Centering main content vertically and horizontally */
+main {
+    min-height: 100vh; /* Full viewport height */
+    display: grid; /* Using grid layout */
+    place-items: center; /* Center items in grid */
+}
+
+/*
+=============== 
+Reviews
+===============
+*/
+
+/* Centering main content vertically and horizontally */
+main {
+    min-height: 100vh; /* Full viewport height */
+    display: grid; /* Using grid layout */
+    place-items: center; /* Center items in grid */
+}
+
+/* Styling the title with centered text and bottom margin */
+.title {
+    text-align: center; /* Center text alignment */
+    margin-bottom: 4rem; /* Bottom margin for spacing */
+}
+
+/* Styling the underline with height, width, background color, and margin */
+.underline {
+    height: 0.25rem; /* Height of the underline */
+    width: 5rem; /* Width of the underline */
+    background: var(--clr-primary-5); /* Background color */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+/* Container width and maximum width settings */
+.container {
+    width: 80vw; /* Width relative to viewport width */
+    max-width: var(--fixed-width); /* Maximum width constraint */
+}
+
+/* Review styling with fixed dimensions, background color, padding, border radius, shadow, and transition */
+.review {
+    background: var(--clr-white); /* Background color */
+    padding: 1.5rem 2rem; /* Padding inside the review */
+    border-radius: var(--radius); /* Rounded corners */
+    box-shadow: var(--light-shadow); /* Light shadow effect */
+    transition: var(--transition); /* Smooth transition effect */
+    text-align: center; /* Center text alignment */
+    width: 500px; /* Fixed width */
+    height: 450px; /* Fixed height */
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Position relative for positioning children */
+    margin: 0 auto; /* Center the review horizontally */
+}
+
+/* Ensure text elements do not overflow and handle multiline text */
+.review h4,
+.review p {
+    margin: 0.5rem 0; /* Margins for spacing */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: normal; /* Allow text to wrap */
+}
+
+/* Review hover effect with dark shadow */
+.review:hover {
+    box-shadow: var(--dark-shadow); /* Dark shadow effect */
+}
+
+/* Image container styling with position, dimensions, border radius, and margin */
+.img-container {
+    position: relative; /* Positioning relative for pseudo-elements */
+    width: 150px; /* Width of the image container */
+    height: 150px; /* Height of the image container */
+    border-radius: 50%; /* Rounded corners for circular shape */
+    margin: 0 auto; /* Center horizontally */
+    margin-bottom: 1.5rem; /* Bottom margin for spacing */
+}
+
+/* Person image styling with dimensions, display, object fit, and border radius */
+#person-img {
+    width: 100%; /* Full width */
+    display: block; /* Block display */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container */
+    border-radius: 50%; /* Rounded corners for circular shape */
+    position: relative; /* Positioning relative for pseudo-elements */
+}
+
+/* Adding after pseudo-element for the image container with Font Awesome icon, positioning, dimensions, grid layout, border-radius, transform, background, and color */
+.img-container::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10e";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transform: translateY(25%);
+    background: var(--clr-primary-5);
+    color: var(--clr-white);
+}
+
+/* Adding before pseudo-element for the image container with dimensions, background, positioning, top and right offsets, and border-radius */
+.img-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--clr-primary-5);
+    position: absolute;
+    top: -0.25rem;
+    right: -0.5rem;
+    border-radius: 50%;
+}
+
+/* Margin adjustment for author text */
+#author {
+    margin-bottom: 0.25rem;
+}
+
+/* Styling job title with uppercase transformation, color, and font size */
+#job {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--clr-primary-5);
+    font-size: 0.85rem;
+}
+
+/* Margin adjustment for info text */
+#info {
+    margin-bottom: 0.75rem;
+}
+
+/* Container for buttons with absolute positioning */
+.button {
+    position: absolute; /* Absolute positioning */
+    bottom: 1.5rem; /* Distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+/* Styling the navigation buttons */
+.prev-btn,
+.next-btn {
+    color: var(--clr-primary-7);
+    font-size: 1.25rem;
+    background: transparent;
+    border-color: transparent;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+/* Hover effect for navigation buttons */
+.prev-btn:hover,
+.next-btn:hover {
+    color: var(--clr-primary-5);
+}
+
+/* Styling the random button */
+.random-btn {
+    margin-top: 0.5rem;
+    background: var(--clr-primary-10);
+    color: var(--clr-primary-5);
+    padding: 0.25rem 0.5rem;
+    text-transform: capitalize;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    border-color: var(--clr-primary-5);
+    cursor: pointer;
+}
+
+/* Hover effect for random button */
+.random-btn:hover {
+    background: var(--clr-primary-5);
+    color: var(--clr-primary-1);
+}
