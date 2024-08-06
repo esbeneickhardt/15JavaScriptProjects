@@ -9,4 +9,7 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
   Lets you increase, decrease and reset counts
 * reviews  
   Displays pretty reviews that one can iterate over
-   
+* navbar  
+  Creates a navigation bar that changes based on screen size
+  
+  
