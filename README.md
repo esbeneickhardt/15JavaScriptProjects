@@ -10,6 +10,7 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 * reviews  
   Displays pretty reviews that one can iterate over
 * navbar  
-  Creates a navigation bar that changes based on screen size
-  
+  Creates a navigation bar that changes based on screen size, and can be toggled on/off
+* sidebar  
+  TBD
   
