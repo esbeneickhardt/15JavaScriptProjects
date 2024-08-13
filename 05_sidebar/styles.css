@@ -1,0 +1,327 @@
+/*
+=============== 
+Fonts
+===============
+*/
+
+/* Importing Google Fonts for "Open Sans" and "Roboto" with specified weights */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+/* Defining CSS variables (custom properties) for color, font, spacing, and layout */
+:root {
+  /* Dark shades of primary color for deeper contrasts */
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* Primary/main color used for prominent elements */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* Lighter shades of primary color for backgrounds and accents */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* Darkest grey for headings to ensure readability */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* Grey shades used for paragraphs and secondary text */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  /* Additional colors for specific use cases */
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  /* Font families for primary and secondary text */
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
+  /* Transition effect for smooth property changes */
+  --transition: all 0.3s linear;
+  /* Spacing for letter-spacing and margins */
+  --spacing: 0.1rem;
+  /* Border radius for rounded corners */
+  --radius: 0.25rem;
+  /* Shadow effects for light and dark appearances */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Maximum width for container elements */
+  --max-width: 1170px;
+  /* Fixed width for specific elements */
+  --fixed-width: 620px;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+/* Resetting margin, padding, and box-sizing for all elements to ensure consistency */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling with font, background color, text color, line-height, and font size */
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+/* Removing default list styling from unordered lists */
+ul {
+  list-style-type: none;
+}
+
+/* Removing default underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Styling headings with font family, letter-spacing, text transformation, and margin */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+
+/* Font size settings for different heading levels */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+/* Styling paragraphs with bottom margin and text color */
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+/* Responsive design adjustments for larger screens */
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem; /* Increase h1 font size for larger screens */
+  }
+  h2 {
+    font-size: 2.5rem; /* Increase h2 font size for larger screens */
+  }
+  h3 {
+    font-size: 1.75rem; /* Increase h3 font size for larger screens */
+  }
+  h4 {
+    font-size: 1rem; /* Increase h4 font size for larger screens */
+  }
+  body {
+    font-size: 1rem; /* Increase base font size for larger screens */
+  }
+  /* Adjust line-height for headings on larger screens */
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* Global section padding */
+.section {
+  padding: 5rem 0; /* Vertical padding for sections */
+}
+
+/* Centering section content and setting maximum width */
+.section-center {
+  width: 90vw; /* Width relative to viewport width */
+  margin: 0 auto; /* Center horizontally */
+  max-width: var(--max-width); /* Maximum width constraint */
+}
+
+/* Responsive width adjustment for larger screens */
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw; /* Increase width relative to viewport */
+  }
+}
+
+/* Centering main content vertically and horizontally */
+main {
+  min-height: 100vh; /* Full viewport height */
+  display: grid; /* Using grid layout */
+  place-items: center; /* Center items in grid */
+}
+
+/*
+=============== 
+Sidebar
+===============
+*/
+
+/* Toggle button styling for opening sidebar */
+.sidebar-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem; /* Font size for toggle button */
+  background: transparent; /* Transparent background */
+  border-color: transparent; /* No border */
+  color: var(--clr-primary-5); /* Button color */
+  transition: var(--transition); /* Smooth transition effect */
+  cursor: pointer; /* Pointer cursor on hover */
+  animation: bounce 2s ease-in-out infinite; /* Bounce animation */
+}
+
+/* Hover effect for sidebar toggle button */
+.sidebar-toggle:hover {
+  color: var(--clr-primary-7); /* Change color on hover */
+}
+
+/* Bounce animation keyframes for sidebar toggle */
+@keyframes bounce {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+  50% {
+    transform: scale(1.5); /* Increased scale at midpoint */
+  }
+  100% {
+    transform: scale(1); /* Return to initial scale */
+  }
+}
+
+/* Sidebar header styling for layout and alignment */
+.sidebar-header {
+  display: flex; /* Flexbox layout for alignment */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Vertical alignment */
+  padding: 1rem 1.5rem; /* Padding around sidebar header */
+}
+
+/* Close button styling for sidebar */
+.close-btn {
+  font-size: 1.75rem; /* Font size for close button */
+  background: transparent; /* Transparent background */
+  border-color: transparent; /* No border */
+  color: var(--clr-primary-5); /* Button color */
+  transition: var(--transition); /* Smooth transition effect */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: var(--clr-red-dark); /* Red color for close button */
+}
+
+/* Hover effect for close button */
+.close-btn:hover {
+  color: var(--clr-red-light); /* Change color on hover */
+  transform: rotate(360deg); /* Rotate on hover */
+}
+
+/* Logo height adjustment */
+.logo {
+  justify-self: center;
+  height: 40px; /* Height of the logo */
+}
+
+.sidebar-header img {
+  width: 50px; /* Set the width you prefer */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* Styling for sidebar navigation links */
+.links a {
+    display: block; /* Block display for links, making each one take up full width */
+    font-size: 1.5rem; /* Font size for link text */
+    text-transform: capitalize; /* Capitalize each word in link text */
+    padding: 1rem 1.5rem; /* Padding inside each link for spacing */
+    color: var(--clr-grey-5); /* Default text color for links */
+    transition: var(--transition); /* Smooth transition effect on hover */
+  }
+  
+  /* Hover effect for sidebar links */
+  .links a:hover {
+    background: var(--clr-primary-8); /* Change background color on hover */
+    color: var(--clr-primary-5); /* Change text color on hover */
+    padding-left: 1.75rem; /* Increase left padding for an indented effect */
+  }
+  
+  /* Social icons container styling */
+  .social-icons {
+    justify-self: center; /* Center icons horizontally */
+    display: flex; /* Flexbox layout for social icons */
+    padding-bottom: 2rem; /* Space below icons */
+  }
+  
+  /* Styling for individual social media icons */
+  .social-icons a {
+    font-size: 1.5rem; /* Font size for icons */
+    margin: 0 0.5rem; /* Horizontal margin between icons */
+    color: var(--clr-primary-5); /* Default color for icons */
+    transition: var(--transition); /* Smooth transition effect on hover */
+  }
+  
+  /* Hover effect for social media icons */
+  .social-icons a:hover {
+    color: var(--clr-primary-1); /* Change icon color on hover */
+  }
+  
+  /* Sidebar container styling */
+  .sidebar {
+    position: fixed; /* Fix sidebar to viewport */
+    top: 0; /* Align to top of viewport */
+    left: 0; /* Align to left of viewport */
+    width: 100%; /* Full width of viewport */
+    height: 100%; /* Full height of viewport */
+    background: var(--clr-white); /* White background for sidebar */
+    display: grid; /* Grid layout for sidebar content */
+    grid-template-rows: auto 1fr auto; /* Layout with header, content, and footer */
+    row-gap: 1rem; /* Space between rows */
+    box-shadow: var(--clr-red-dark); /* Shadow effect around sidebar */
+    transition: var(--transition); /* Smooth transition effect for sidebar */
+    transform: translate(-100%);  Sidebar initially hidden off-screen (commented out) */
+  }
+  
+  /* Class for showing the sidebar */
+  .show-sidebar {
+    transform: translate(0); /* Move sidebar into view */
+  }
+  
+  /* Responsive design adjustments for sidebar on larger screens */
+  @media screen and (min-width: 676px) {
+    .sidebar {
+      width: 400px; /* Fixed width for sidebar on larger screens */
+    }
+  }
+  
