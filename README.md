@@ -13,7 +13,10 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
   Creates a navigation bar that changes based on screen size, and can be toggled on/off
 * sidebar  
   Creates a sidebar that changes based on screen size, and can be toggled on/off
-* Modal
+* **Modal**  
   Creates a modal that can be opened and closed
+* **Menu**  
+  Sets up menu items dynamically.
+  Continue: 2:56:48
 
   
