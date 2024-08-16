@@ -77,35 +77,37 @@ const menu = [
 // Selecting where to display content
 const sectionCenter = document.querySelector(".section-center")
 
-// Selecting buttons
-const buttons = document.querySelectorAll('.filter-btn')
+// Selecting where to display buttons
+const buttonContainer = document.querySelector('.btn-container')
+
+// Unique categories
+const categories = ["all", ...new Set(menu.map(item => item["category"]))];
 
 // Populating items on load
 window.addEventListener('DOMContentLoaded', function() {
-    displayMenuItems(menu)
+    displayButtons(categories);
+    displayMenuItems(menu);
+    addButtonListeners();
 })
 
-// Changing displayed items based on button press
-buttons.forEach(function(button) {
-    button.addEventListener('click', function(e) {
-        const currentButton = e.currentTarget;
-        const category = currentButton.textContent.trim().toLowerCase();
-        
-        const selectedItems = menu.filter(function(item) {
-            if (item.category.toLowerCase() === category) {
-                return item
-            }
-        });
-        
-        if(category === "all") {
-            displayMenuItems(menu);
-        } else {
-            displayMenuItems(selectedItems);
-        }
-    });
-})
+// Wraps buttons in HTML and displays them
+function displayButtons(categories) {
+  let displayButtons = categories.map(function (category){
+    return `
+          <button type="button" class="filter-btn" data-id=${category}>
+          ${category}
+        </button>
+        `;
+  });
 
-// Wraps list items in HTML and displays them
+  // Join the array of HTML strings into a single string
+  displayButtons = displayButtons.join("");
+  
+  // Insert the HTML into the section-center
+  buttonContainer.innerHTML = displayButtons;  
+}
+
+// Wraps menu items in HTML and displays them
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
         return `
@@ -127,4 +129,31 @@ function displayMenuItems(menuItems) {
       
       // Insert the HTML into the section-center
       sectionCenter.innerHTML = displayMenu;
+}
+
+
+// Button event listeners
+function addButtonListeners() {
+    // Selecting buttons
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // Defining actions
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+          const currentButton = e.currentTarget;
+          const category = currentButton.textContent.trim().toLowerCase();
+          
+          const selectedItems = menu.filter(function(item) {
+              if (item.category.toLowerCase() === category) {
+                  return item
+              }
+          });
+          
+          if(category === "all") {
+              displayMenuItems(menu);
+          } else {
+              displayMenuItems(selectedItems);
+          }
+      });
+  })
 }
