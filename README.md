@@ -18,6 +18,8 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 * **Menu**  
   Sets up buttons and menu items dynamically, and lets you filter them.
 * **Video**  
-  Let's see
+  Creating a website that runs a video in the background that can be started/paused.
+* **Let's See**  
+  TBD
 
   
