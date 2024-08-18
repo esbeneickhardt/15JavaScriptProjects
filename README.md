@@ -3,15 +3,15 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 
 # Projects
 
-* **color_flipper**  
+* **Color Flipper**  
   Lets you change the background color to a random color
-* **counter**  
+* **Counter**  
   Lets you increase, decrease and reset counts
-* **reviews**  
+* **Reviews**  
   Displays pretty reviews that one can iterate over
-* **navbar**  
+* **Navbar**  
   Creates a navigation bar that changes based on screen size, and can be toggled on/off
-* **sidebar**  
+* **Sidebar**  
   Creates a sidebar that changes based on screen size, and can be toggled on/off
 * **Modal**  
   Creates a modal that can be opened and closed
@@ -19,7 +19,9 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
   Sets up buttons and menu items dynamically, and lets you filter them.
 * **Video**  
   Creating a website that runs a video in the background that can be started/paused.
-* **Let's See**  
+* **Scroll**    
+  A weebsite that lets you scroll through the page using the menu items-
+* **Tabs**  
   TBD
 
   
