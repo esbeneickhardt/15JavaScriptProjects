@@ -1,5 +1,5 @@
 # Introduction
-Here we implement the mini-projects presented [here](https://www.youtube.com/watch?v=3PHXvlpOkf4) in order to learn HTML, JavaScript and CSS.
+Here we implement the mini-projects presented on [YouTube](https://www.youtube.com/watch?v=3PHXvlpOkf4) in order to learn HTML, JavaScript and CSS. The original git repository is [here](https://github.com/john-smilga/javascript-basic-projects/tree/master).
 
 # Projects
 
@@ -23,7 +23,7 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
   A website that lets you scroll through the page using the menu items. It handles both big and small screens.
 * **10 Tabs**  
   A website with three tabs that one can change between.
-* **11 Countdown**
+* **11 Countdown**  
   The website features a count down
 
 CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=4h59m
