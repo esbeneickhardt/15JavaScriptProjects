@@ -3,28 +3,28 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 
 # Projects
 
-* **Color Flipper**  
+* **01 Color Flipper**  
   Lets you change the background color to a random color
-* **Counter**  
+* **02 Counter**  
   Lets you increase, decrease and reset counts
-* **Reviews**  
+* **03 Reviews**  
   Displays pretty reviews that one can iterate over
-* **Navbar**  
+* **04 Navbar**  
   Creates a navigation bar that changes based on screen size, and can be toggled on/off
-* **Sidebar**  
+* **05 Sidebar**  
   Creates a sidebar that changes based on screen size, and can be toggled on/off
-* **Modal**  
+* **06 Modal**  
   Creates a modal that can be opened and closed
-* **Menu**  
+* **07 Menu**  
   Sets up buttons and menu items dynamically, and lets you filter them.
-* **Video**  
+* **08 Video**  
   Creating a website that runs a video in the background that can be started/paused.
-* **Scroll**    
+* **09 Scroll**    
   A website that lets you scroll through the page using the menu items. It handles both big and small screens.
-* **Tabs**  
+* **10 Tabs**  
   A website with three tabs that one can change between.
-* **TBD**
-  TBD
+* **11 Countdown**
+  The website features a count down
 
 CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=4h36m
   
