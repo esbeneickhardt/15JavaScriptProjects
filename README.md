@@ -26,4 +26,5 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 * **TBD**
   TBD
 
+CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=4h36m
   

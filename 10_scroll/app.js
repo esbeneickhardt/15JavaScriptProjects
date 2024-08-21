@@ -76,6 +76,7 @@ scrollLinks.forEach(function(link) {
             position = position-navHeight
         }
 
+        // If small screen and large navbar
         if (containerHeight > 40) {
             position = position+containerHeight
         }
