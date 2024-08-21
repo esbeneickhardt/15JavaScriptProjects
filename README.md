@@ -26,5 +26,5 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 * **11 Countdown**
   The website features a count down
 
-CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=4h36m
+CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=4h59m
   
