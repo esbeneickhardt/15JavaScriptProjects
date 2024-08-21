@@ -20,8 +20,10 @@ Here we implement the mini-projects presented [here](https://www.youtube.com/wat
 * **Video**  
   Creating a website that runs a video in the background that can be started/paused.
 * **Scroll**    
-  A weebsite that lets you scroll through the page using the menu items-
+  A website that lets you scroll through the page using the menu items. It handles both big and small screens.
 * **Tabs**  
+  A website with three tabs that one can change between.
+* **TBD**
   TBD
 
   
