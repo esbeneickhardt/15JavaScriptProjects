@@ -53,5 +53,40 @@ window.addEventListener('scroll', function() {
       }
 })
 
-// Aligning headers with scroll
+// Making precise scrolling to headers
+const scrollLinks = document.querySelectorAll(".scroll-link");
+scrollLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        // Removes current behaviour
+        e.preventDefault()
 
+        // Navigate to specific spot
+        // Getting element to navigate to
+        const id = e.currentTarget.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+        
+        // Getting height to navigate to
+        const navHeight = navbar.getBoundingClientRect().height;
+        const containerHeight = linksContainer.getBoundingClientRect().height;
+        const fixedNav = navbar.classList.contains("fixed-nav");
+        let position = element.offsetTop - navHeight;
+
+        // If static navbar
+        if (!fixedNav) {
+            position = position-navHeight
+        }
+
+        if (containerHeight > 40) {
+            position = position+containerHeight
+        }
+
+        // Scrolling to position
+        window.scrollTo({
+            left: 0,
+            top: position,
+        });
+
+        // Closes small screen navbar
+        linksContainer.style.height = 0;
+    })
+})
