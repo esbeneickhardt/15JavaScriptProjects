@@ -32,5 +32,5 @@ Here we implement the mini-projects presented on [YouTube](https://www.youtube.c
 * **14 Grocery Bag**  
   Lets you add and remove items from a grocery bag
 
-CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=6h18m
+CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=6h54m
   
