@@ -1,4 +1,7 @@
-// DOM Elements
+//////////////////////////
+////// DOM ELEMENTS //////
+//////////////////////////
+
 const alert = document.querySelector('.alert');
 const form = document.querySelector('.grocery-form');
 const grocery = document.getElementById('grocery');
@@ -7,17 +10,29 @@ const container = document.querySelector('.grocery-container');
 const list = document.querySelector('.grocery-list');
 const clearBtn = document.querySelector('.clear-btn')
 
-// Editing elements
+///////////////////////////////////
+////// INITIAL CONFIGURATION //////
+///////////////////////////////////
+
 let editElement;
 let editFlag = false;
 let editId = "";
 
-// Submit form
+/////////////////////////////
+////// EVENT LISTENERS //////
+/////////////////////////////
+
+// Adding form item
 form.addEventListener('submit', addItem);
 
-// ****** EVENT LISTENERS **********
+// Clearing list
+clearBtn.addEventListener('click', clearItems);
 
-// Functions
+///////////////////////
+////// FUNCTIONS //////
+///////////////////////
+
+// Adds item to Grocery List
 function addItem(e) {
   // Default submits to server
   e.preventDefault();
@@ -59,7 +74,9 @@ function addItem(e) {
 
     // Add to local storage
     // addToLocalStorage(id, value);
-    // setBackToDefault;
+
+    // Set text form back to default
+    setBackToDefault();
   } 
   // Editing item
   else if (value && editFlag === true) {
@@ -69,7 +86,24 @@ function addItem(e) {
   }
 }
 
-// Creates a temporary alert
+// Clearing all items
+function clearItems() {
+  const items = document.querySelectorAll(".grocery-item");
+  container.classList.remove("show-container");
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      list.removeChild(item);
+    });
+    
+    setBackToDefault();
+  } else {
+    displayAlert("empty list", "danger");
+  }
+
+  //localStorage.removeItem("list"); 
+}
+
+// Creating alert
 function displayAlert(text,action) {
   // add alert
   alert.textContent = text;
@@ -84,10 +118,13 @@ function displayAlert(text,action) {
 
 // Adds items to local storage
 function addToLocalStorage(id, value) {
-
+  console.log("added to local storage")
 };
 
-// Sets back to default
+// Sets text form back to default
 function setBackToDefault() {
-
+  grocery.value = '';
+  editFlag = false;
+  editId = '';
+  submit.textContent = 'submit';
 };
