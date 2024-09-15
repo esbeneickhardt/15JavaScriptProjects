@@ -5,7 +5,7 @@
 const alert = document.querySelector('.alert');
 const form = document.querySelector('.grocery-form');
 const grocery = document.getElementById('grocery');
-const submit = document.querySelector('submit-btn');
+const submit = document.querySelector('.submit-btn');
 const container = document.querySelector('.grocery-container');
 const list = document.querySelector('.grocery-list');
 const clearBtn = document.querySelector('.clear-btn')
@@ -27,6 +27,12 @@ form.addEventListener('submit', addItem);
 
 // Clearing list
 clearBtn.addEventListener('click', clearItems);
+
+// Edit item
+
+// Delete item
+// const deleteBtn = document.querySelector('.delete-btn');
+// console.log(deleteBtn)
 
 ///////////////////////
 ////// FUNCTIONS //////
@@ -63,6 +69,12 @@ function addItem(e) {
       </div>
     `;
 
+    // Targeting dynamically created buttons
+    const deleteBtn = element.querySelector('.delete-btn');
+    deleteBtn.addEventListener('click', deleteItem);
+    const editBtn = element.querySelector('.edit-btn');
+    editBtn.addEventListener('click', editItem);
+
     // Adding element to grocery-list
     list.appendChild(element);
 
@@ -79,12 +91,42 @@ function addItem(e) {
     setBackToDefault();
   } 
   // Editing item
-  else if (value && editFlag === true) {
-    console.log('editing');
+  else if (value && editFlag) {
+    // Updating element
+    editElement.innerHTML = value;
+
+    setBackToDefault();
   } else {
     displayAlert("Missing Item", "danger")
   }
-}
+};
+
+// Delete function
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove("show-container");
+  }
+  setBackToDefault();
+  //removeFromLocalStorage();
+};
+
+// Edit function
+function editItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+
+  // Set edit item
+  editElement = e.currentTarget.parentElement.previousElementSibling;
+
+  // Set form item
+  grocery.value = editElement.innerHTML
+  editFlag = true;
+  editId = element.dataset.id;
+  submit.textContent = "edit";
+  
+};
 
 // Clearing all items
 function clearItems() {
@@ -94,14 +136,10 @@ function clearItems() {
     items.forEach(function (item) {
       list.removeChild(item);
     });
-    
-    setBackToDefault();
-  } else {
-    displayAlert("empty list", "danger");
   }
-
+  setBackToDefault();
   //localStorage.removeItem("list"); 
-}
+};
 
 // Creating alert
 function displayAlert(text,action) {
@@ -114,11 +152,6 @@ function displayAlert(text,action) {
     alert.textContent = "";
     alert.classList.remove(`alert-${action}`);
   }, 1000);
-}
-
-// Adds items to local storage
-function addToLocalStorage(id, value) {
-  console.log("added to local storage")
 };
 
 // Sets text form back to default
@@ -127,4 +160,19 @@ function setBackToDefault() {
   editFlag = false;
   editId = '';
   submit.textContent = 'submit';
+};
+
+// Adds items to local storage
+function addToLocalStorage(id, value) {
+  console.log("added to local storage")
+};
+
+// Sets text form back to default
+function removeFromLocalStorage(id) {
+  console.log("removed from local storage")
+};
+
+// Sets text form back to default
+function editLocalStorage(id, value) {
+  console.log("edited local storage")
 };
