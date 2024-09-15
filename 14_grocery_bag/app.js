@@ -14,7 +14,7 @@ const clearBtn = document.querySelector('.clear-btn')
 ////// INITIAL CONFIGURATION //////
 ///////////////////////////////////
 
-let editElement;
+let editElement = null;
 let editFlag = false;
 let editId = "";
 
@@ -22,13 +22,9 @@ let editId = "";
 ////// EVENT LISTENERS //////
 /////////////////////////////
 
-// Adding form item
+// Adding event listeners
 form.addEventListener('submit', addItem);
-
-// Clearing list
 clearBtn.addEventListener('click', clearItems);
-
-// Loading local storage
 window.addEventListener('DOMContentLoaded', setupItems);
 
 ///////////////////////

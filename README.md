@@ -31,6 +31,8 @@ Here we implement the mini-projects presented on [YouTube](https://www.youtube.c
   Lets you chose how many paragraphs you want of lorem ipsum.
 * **14 Grocery Bag**  
   Lets you add and remove items from a grocery bag
+* **15 Slider**
+  Lets you create a slide show of images
 
-CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=6h54m
+CONTINUE: https://www.youtube.com/watch?v=3PHXvlpOkf4&t=8h01m
   
